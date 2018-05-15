@@ -5,11 +5,13 @@ pipeline {
          pollSCM('* * * * *')
      }
 
-stages{
+stages{ 
+    steps {
         stage('Build'){
 
             echo 'Now Archiving....'
         }
+    }
 
     }
 }
