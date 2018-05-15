@@ -21,7 +21,7 @@ stages{
             }
             post {
                 success {
-                    echo 'Building succeeded....Olé....Ola'
+                    echo 'Building succeeded....Olé....Ola hahah'
                     // archiveArtifacts artifacts: '**/target/*.war'
                 }
             }
