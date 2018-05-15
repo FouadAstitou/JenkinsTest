@@ -1,9 +1,9 @@
 pipeline {
     agent any
- tools {
-    maven 'localMAVEN'
-    //Test
- }
+//  tools {
+//     maven 'localMAVEN'
+//     //Test
+//  }
 
     triggers {
          pollSCM('* * * * *')
@@ -15,14 +15,16 @@ stages{
             steps {
                 echo 'Now Building...'
 
+                sh " xcrun xcodebuild -workspace JenkinsTest.xcworkspace -scheme JenkinsTest -configuration "Debug" -sdk iphoneos CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO clean build | /usr/local/bin/xcpretty" 
+
                 // Pipe and xcpretty command can be omitted
             }
-            post {
-                success {
-                    echo 'Building succeeded....'
-                    archiveArtifacts artifacts: '**/target/*.war'
-                }
-            }
+            // post {
+            //     success {
+            //         echo 'Building succeeded....'
+            //         archiveArtifacts artifacts: '**/target/*.war'
+            //     }
+            // }
         }
 
         // stage ('Deployments'){
