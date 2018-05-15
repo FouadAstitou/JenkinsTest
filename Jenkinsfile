@@ -19,12 +19,12 @@ stages{
 
                 // Pipe and xcpretty command can be omitted
             }
-            // post {
-            //     success {
-            //         echo 'Building succeeded....'
-            //         archiveArtifacts artifacts: '**/target/*.war'
-            //     }
-            // }
+            post {
+                success {
+                    echo 'Building succeeded....'
+                    // archiveArtifacts artifacts: '**/target/*.war'
+                }
+            }
         }
 
         // stage ('Deployments'){
