@@ -14,7 +14,7 @@ stages{
 
             steps {
                 echo 'Now Building...'
-
+                echo PATH
                 sh ' xcrun xcodebuild -workspace JenkinsTest.xcworkspace -scheme JenkinsTest -configuration "Debug" -sdk iphoneos CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO clean build | /usr/local/bin/xcpretty' 
 
                 // Pipe and xcpretty command can be omitted
