@@ -11,7 +11,6 @@ pipeline {
 
 stages{
         stage('Build'){
-            sh " xcrun xcodebuild -workspace JenkinsTest.xcworkspace -scheme JenkinsTest -configuration "Debug" -sdk iphoneos CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO clean build | /usr/local/bin/xcpretty" 
 
             steps {
                 echo 'Now Building...'
