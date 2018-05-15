@@ -15,11 +15,11 @@ stages{
                 echo 'Now Building...'
 
                 // Pipe and xcpretty command can be omitted
-                xcrun xcodebuild -workspace InnovatieApp.xcworkspace \
-                -scheme InnovatieApp \
-                -configuration "Debug" \
-                -sdk iphoneos \
-                CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO \
+                xcrun xcodebuild -workspace InnovatieApp.xcworkspace 
+                -scheme InnovatieApp 
+                -configuration "Debug" 
+                -sdk iphoneos 
+                CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO 
                 clean build | /usr/local/bin/xcpretty 
             }
             post {
