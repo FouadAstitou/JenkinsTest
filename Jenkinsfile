@@ -12,15 +12,22 @@ pipeline {
 stages{
         stage('Build'){
             steps {
-                echo 'Now Archiving...'
-                // sh 'mvn clean package'
+                echo 'Now Building...'
+
+                // Pipe and xcpretty command can be omitted
+                xcrun xcodebuild -workspace InnovatieApp.xcworkspace \
+                -scheme InnovatieApp \
+                -configuration "Debug" \
+                -sdk iphoneos \
+                CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO \
+                clean build | /usr/local/bin/xcpretty 
             }
-            // post {
-            //     success {
-            //         echo 'Now Archiving...'
-            //         archiveArtifacts artifacts: '**/target/*.war'
-            //     }
-            // }
+            post {
+                success {
+                    echo 'Building succeeded....'
+                    archiveArtifacts artifacts: '**/target/*.war'
+                }
+            }
         }
 
         // stage ('Deployments'){
