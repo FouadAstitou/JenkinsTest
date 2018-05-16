@@ -1,3 +1,5 @@
+def currentBranch = ${GIT_BRANCH} 
+
 pipeline {
     agent any //{ label 'minibuilder'}
 
@@ -18,7 +20,7 @@ stages{
             }
             post {
                 success {
-                    if (${GIT_BRANCH} == 'origin/master') {
+                    if (${currentBranch} == 'origin/master') {
                         echo 'Building succeeded....Olé..Oelala'
                     }
                     echo "${GIT_BRANCH}"
