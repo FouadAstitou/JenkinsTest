@@ -19,9 +19,6 @@ stages{
             post {
                 success {
                     echo 'Building succeeded....Olé..Oelala'
-                    // archiveArtifacts artifacts: '**/target/*.war'
-                    echo "BRANCH_NAME = "
-                    echo BRANCH_NAME
                 }
             }
         }
