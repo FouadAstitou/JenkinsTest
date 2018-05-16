@@ -1,6 +1,6 @@
 
 pipeline {
-    def currentBranch = "${GIT_BRANCH}" 
+    // def currentBranch = "${GIT_BRANCH}" 
 
     agent any //{ label 'minibuilder'}
 
