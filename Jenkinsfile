@@ -1,5 +1,5 @@
 pipeline {
-    agent { label 'minibuilder'}
+    agent any //{ label 'minibuilder'}
 
     // triggers {
     //      pollSCM('* * * * *')
