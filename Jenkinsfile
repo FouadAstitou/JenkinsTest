@@ -19,6 +19,8 @@ stages{
             post {
                 success {
                     echo 'Building succeeded....Olé..Oelala'
+                    echo "${BRANCH_NAME}"
+                    echo "${env.BRANCH_NAME}"
                 }
             }
         }
