@@ -18,7 +18,9 @@ stages{
             }
             post {
                 success {
-                    echo 'Building succeeded....Olé..Oelala'
+                    if ${GIT_BRANCH} == 'origin/master' {
+                        echo 'Building succeeded....Olé..Oelala'
+                    }
                     echo "${GIT_BRANCH}"
                     // echo "${env.BRANCH_NAME}"
                 }
