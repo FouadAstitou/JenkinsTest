@@ -24,9 +24,8 @@ stages{
             }
             post {
                 success {
-                    echo "CURRENT BRANSCH IS..."
+                    echo "CURRENT BRANCH IS..."
                     echo "${GIT_BRANCH}"
-                    // echo "${env.BRANCH_NAME}"
                 }
             }
         }
