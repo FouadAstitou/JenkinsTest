@@ -21,6 +21,14 @@ stages{
                 // if (${currentBranch} == 'origin/master') {
                 //         echo 'Building succeeded....Olé..Oelala'
                 //     }
+
+                script {
+                    if ('${GIT_BRANCH}' == 'master') {
+                        echo 'I only execute on the master branch'
+                    } else {
+                        echo 'I execute elsewhere'
+                     }
+                }
             }
             post {
                 success {
