@@ -23,7 +23,7 @@ stages{
                 //     }
 
                 script {
-                    if ("${GIT_BRANCH}" == 'origin/master') {
+                    if ('${GIT_BRANCH}' == 'origin/master') {
                         echo 'I only execute on the master branch'
                     } else {
                         echo 'I execute elsewhere'
