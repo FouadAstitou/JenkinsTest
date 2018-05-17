@@ -1,7 +1,7 @@
 def xcodepWorkspace = 'JenkinsTest.xcworkspace'
-def testBool() {
-    true
-}
+// def testBool() {
+//     true
+// }
 
 pipeline {
     // def currentBranch = "${GIT_BRANCH}" 
@@ -33,9 +33,9 @@ stages{
                         echo 'I execute elsewhere'
                     }
 
-                    if (testBool) {
-                        echo 'TESTBOO DETECTED'
-                    }
+                    // if (testBool) {
+                    //     echo 'TESTBOO lDETECTED'
+                    // }
                 }
             }
             post {
@@ -47,7 +47,9 @@ stages{
             }
         }
         stage('Upload') {
-            sh 'xcrun -sdk iphoneos PackageApplication -v JenkinsTest.app -o JenkinsTest.ipa --sign "iPhone Distribution: F Astitou"'
+            steps {
+                sh 'xcrun -sdk iphoneos PackageApplication -v JenkinsTest.app -o JenkinsTest.ipa --sign "iPhone Distribution: F Astitou"'
+            }
         }
     }
 }
