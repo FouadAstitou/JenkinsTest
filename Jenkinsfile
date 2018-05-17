@@ -1,4 +1,7 @@
 def xcodepWorkspace = 'JenkinsTest.xcworkspace'
+def testBool() {
+    true
+}
 
 pipeline {
     // def currentBranch = "${GIT_BRANCH}" 
@@ -28,6 +31,10 @@ stages{
                         echo 'I only execute on the master branch'
                     } else {
                         echo 'I execute elsewhere'
+                    }
+
+                    if (testBool) {
+                        echo 'TESTBOO DETECTED'
                     }
                 }
             }
