@@ -46,5 +46,8 @@ stages{
                 }
             }
         }
+        stage('Upload') {
+            sh 'xcrun -sdk iphoneos PackageApplication -v JenkinsTest.app -o JenkinsTest.ipa --sign "iPhone Distribution: F Astitou"'
+        }
     }
 }
