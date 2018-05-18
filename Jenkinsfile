@@ -6,7 +6,7 @@ def xcodepWorkspace = 'JenkinsTest.xcworkspace'
 pipeline {
     // def currentBranch = "${GIT_BRANCH}" 
 
-    agent any //{ label 'minibuilder'}
+    agent any { label 'minibuilder'}
 
     // triggers {
     //      pollSCM('* * * * *')
@@ -19,7 +19,7 @@ stages{
                 echo 'Now Building...'
                 // PATH+EXTRA='/usr/bin:/bin:/usr/sbin:/sbin'
                 echo PATH
-                sh "xcrun xcodebuild -workspace '${xcodepWorkspace}' -scheme JenkinsTest -configuration 'Debug' -sdk iphoneos CODE_SIGN_IDENTITY='' CODE_SIGNING_REQUIRED=NO clean build"
+                sh "xcrun xcodebuild -workspace '${xcodepWorkspace}' -scheme JenkinsTest -configuration 'Debug' -sdk iphoneos CODE_SIGN_IDENTITY='' CODE_SIGNING_REQUIRED=NO clean build | xcpretty"
 
                 // Pipe and xcpretty command can be omitted, | /usr/local/bin/xcpretty
                 // if (${currentBranch} == 'origin/master') {
@@ -48,7 +48,7 @@ stages{
         }
         stage('Upload') {
             steps {
-                sh 'xcrun -sdk iphoneos PackageApplication -v JenkinsTest.app -o JenkinsTest.ipa --sign "iPhone Distribution: F Astitou"'
+                // sh 'xcrun -sdk iphoneos PackageApplication -v JenkinsTest.app -o JenkinsTest.ipa --sign "iPhone Distribution: F Astitou"'
             }
         }
     }
