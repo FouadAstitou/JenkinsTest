@@ -46,10 +46,10 @@ stages{
                 }
             }
         }
-        stage('Upload') {
-            steps {
-                // sh 'xcrun -sdk iphoneos PackageApplication -v JenkinsTest.app -o JenkinsTest.ipa --sign "iPhone Distribution: F Astitou"'
-            }
-        }
+        // stage('Upload') {
+        //     steps {
+        //         sh 'xcrun -sdk iphoneos PackageApplication -v JenkinsTest.app -o JenkinsTest.ipa --sign "iPhone Distribution: F Astitou"'
+        //     }
+        // }
     }
 }
