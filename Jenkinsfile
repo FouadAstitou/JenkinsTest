@@ -28,7 +28,7 @@ stages {
                 echo 'Now Building...'
                 // PATH+EXTRA='/usr/bin:/bin:/usr/sbin:/sbin'
                 echo PATH
-                sh "xcrun xcodebuild -workspace '${xcodepWorkspace}' -scheme JenkinsTest -configuration 'Debug' -sdk iphoneos CODE_SIGN_IDENTITY='' CODE_SIGNING_REQUIRED=NO clean build | xcpretty"
+                // sh "xcrun xcodebuild -workspace '${xcodepWorkspace}' -scheme JenkinsTest -configuration 'Debug' -sdk iphoneos CODE_SIGN_IDENTITY='' CODE_SIGNING_REQUIRED=NO clean build | xcpretty"
                 
                 sh "xcodebuild -scheme JenkinsTest -workspace '${xcodepWorkspace}' archive | xcpretty"  
                 // Pipe and xcpretty command can be omitted, | /usr/local/bin/xcpretty
