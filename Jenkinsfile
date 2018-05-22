@@ -29,7 +29,7 @@ stages {
                 // PATH+EXTRA='/usr/bin:/bin:/usr/sbin:/sbin'
                 echo PATH
                 sh "xcrun xcodebuild -workspace '${xcodepWorkspace}' -scheme JenkinsTest -configuration 'Debug' -sdk iphoneos CODE_SIGN_IDENTITY='' CODE_SIGNING_REQUIRED=NO clean build | xcpretty"
-                sh "xcrun xcodebuild -workspace '${xcodepWorkspace}' -scheme JenkinsTest -configuration 'Release' -sdk iphoneos CODE_SIGN_IDENTITY='' CODE_SIGNING_REQUIRED=NO archive | xcpretty"
+                sh "xcrun xcodebuild -workspace '${xcodepWorkspace}' -scheme JenkinsTest -configuration 'Debug' -sdk iphoneos CODE_SIGN_IDENTITY='' CODE_SIGNING_REQUIRED=NO archive | xcpretty"
                 // sh 'xcodebuild -workspace JenkinsTest.xcworkspace -scheme JenkinsTest -sdk iphoneos -configuration AppStoreDistribution archive -archivePath $PWD/build/JenkinsTest.xcarchive'
                 // sh "xcodebuild -scheme JenkinsTest -workspace '${xcodepWorkspace}' archive | xcpretty"  
                 // Pipe and xcpretty command can be omitted, | /usr/local/bin/xcpretty
