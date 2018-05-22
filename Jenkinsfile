@@ -16,7 +16,8 @@ stages {
 
     stage('cocoapods') {
         steps {
-            #!/bin/bash -l
+            // sh '#!/bin/bash -l'
+            sh 'gem install cocoapods'
             sh 'pod install' // cocoapods is used to manage our third-party dependencies
             }
         }
