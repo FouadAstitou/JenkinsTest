@@ -25,7 +25,7 @@ stages {
         stage('Build'){
 
             steps {
-                PATH='/usr/local/bin/'
+                PATH='/usr/bin:/bin:/usr/sbin:/sbin'
                 echo 'Now Building...'
                 // PATH+EXTRA='/usr/bin:/bin:/usr/sbin:/sbin'
                 echo PATH
