@@ -25,10 +25,11 @@ stages {
         stage('Build'){
 
             steps {
+                PATH='/usr/local/bin/'
                 echo 'Now Building...'
                 // PATH+EXTRA='/usr/bin:/bin:/usr/sbin:/sbin'
                 echo PATH
-                sh "xcrun xcodebuild -workspace '${xcodepWorkspace}' -scheme JenkinsTest -configuration 'Debug' -sdk iphoneos CODE_SIGN_IDENTITY='' CODE_SIGNING_REQUIRED=NO clean build | /Users/mlab/.rvm/gems/ruby-2.3.0/bin:/usr/local/bin/xcpretty"
+                sh "xcrun xcodebuild -workspace '${xcodepWorkspace}' -scheme JenkinsTest -configuration 'Debug' -sdk iphoneos CODE_SIGN_IDENTITY='' CODE_SIGNING_REQUIRED=NO clean build | xcpretty"
                 
                 //sh "xcodebuild -scheme JenkinsTest -workspace '${xcodepWorkspace}' archive"  
                 // Pipe and xcpretty command can be omitted, | /usr/local/bin/xcpretty
