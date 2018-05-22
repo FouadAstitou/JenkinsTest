@@ -52,7 +52,7 @@ stages {
             post {
                 success {
                     echo "CURRENT BRANCH IS..."
-                    echo "${GIT_BRANCH}"
+                    // echo "${GIT_BRANCH}"
                     echo "${env.BRANCH_NAME}"
                 }
             }
