@@ -15,9 +15,11 @@ pipeline {
 stages {
 
     stage('cocoapods') {
+        steps {
             sh 'bundle exec pod install' // cocoapods is used to manage our third-party dependencies
+            }
         }
-        
+
         stage('Build'){
 
             steps {
