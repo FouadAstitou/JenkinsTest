@@ -6,7 +6,7 @@ def xcodepWorkspace = 'JenkinsTest.xcworkspace'
 pipeline {
     // def currentBranch = "${GIT_BRANCH}" 
 
-    agent { label 'minibuilder'}
+    agent any
 
     // triggers {
     //      pollSCM('* * * * *')
