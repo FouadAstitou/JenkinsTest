@@ -55,6 +55,7 @@ stages {
                     echo "CURRENT BRANCH IS..."
                     // echo "${GIT_BRANCH}"
                     echo "${env.BRANCH_NAME}"
+                    sh "agvtool new-marketing-version 2.0"
                 }
             }
         }
