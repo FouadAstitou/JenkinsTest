@@ -16,7 +16,7 @@ stages {
 
     stage('cocoapods') {
         steps {
-            // sh 'gem install -n /usr/local/bin cocoapods'
+             sh 'gem install -n /usr/local/bin cocoapods'
             // sh 'gem install -n /usr/local/bin xcpretty' //[Use this to install gems in a way they can be found by the system]
             echo 'Pod instal....'
             sh 'pod install' // cocoapods is used to manage our third-party dependencies
