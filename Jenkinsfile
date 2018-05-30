@@ -37,6 +37,7 @@ stages {
                 // if (${currentBranch} == 'origin/master') {
                 //         echo 'Building succeeded....Olé..Oelala'
                 //     }
+                // 
 
                 script {
                     if (env.BRANCH_NAME == 'origin/master') {
