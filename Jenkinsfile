@@ -66,5 +66,10 @@ stages {
                 sh 'xcodebuild -exportArchive -archivePath $PWD/build/JenkinsTest.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath $PWD/build'
             }
         }
+        stage('upload') {
+            steps {
+                sh 'cd build'
+            }
+        }
     }
 }
