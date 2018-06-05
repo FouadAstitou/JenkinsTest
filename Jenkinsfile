@@ -60,16 +60,18 @@ stages {
                 }
             }
         }
+
         stage('export') {
             steps {
                 // sh 'xcrun -sdk iphoneos PackageApplication -v JenkinsTest.app -o JenkinsTest.ipa --sign "iPhone Distribution: F Astitou"'
                 sh 'xcodebuild -exportArchive -archivePath $PWD/build/JenkinsTest.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath $PWD/build'
             }
         }
+
         stage('upload') {
             steps {
                 sh 'cd build'
-                sh '/Applications/Xcode.app/Contents/Applications/Application\ Loader.app/Contents/Frameworks/ITunesSoftwareService.framework/Support/altool --upload-app -f "JenkinsTest.ipa" -u f.astitou@gmail.com'
+                // sh '/Applications/Xcode.app/Contents/Applications/Application\ Loader.app/Contents/Frameworks/ITunesSoftwareService.framework/Support/altool --upload-app -f "JenkinsTest.ipa" -u f.astitou@gmail.com'
             }
         }
     }
