@@ -31,7 +31,7 @@ stages {
                 echo PATH
                 sh "xcrun xcodebuild -workspace '${xcodepWorkspace}' -scheme JenkinsTest -configuration 'Debug' -sdk iphoneos CODE_SIGN_IDENTITY='' CODE_SIGNING_REQUIRED=NO clean build | xcpretty"
                 // sh "xcrun xcodebuild -workspace '${xcodepWorkspace}' -scheme JenkinsTest -configuration 'Debug' -sdk iphoneos CODE_SIGN_IDENTITY='' CODE_SIGNING_REQUIRED=NO archive | xcpretty"
-                sh 'xcodebuild -workspace JenkinsTest.xcworkspace -scheme JenkinsTest -sdk iphoneos -configuration AppStoreDistribution archive -archivePath $PWD/build/JenkinsTest.xcarchive'
+                // sh 'xcodebuild -workspace JenkinsTest.xcworkspace -scheme JenkinsTest -sdk iphoneos -configuration AppStoreDistribution archive -archivePath $PWD/build/JenkinsTest.xcarchive'
                 // sh "xcodebuild -scheme JenkinsTest -workspace '${xcodepWorkspace}' archive | xcpretty"  
                 // Pipe and xcpretty command can be omitted, | /usr/local/bin/xcpretty
                 // if (${currentBranch} == 'origin/master') {
@@ -64,7 +64,7 @@ stages {
         stage('export') {
             steps {
                 // sh 'xcrun -sdk iphoneos PackageApplication -v JenkinsTest.app -o JenkinsTest.ipa --sign "iPhone Distribution: F Astitou"'
-                sh 'xcodebuild -exportArchive -archivePath $PWD/build/JenkinsTest.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath $PWD/build'
+                // sh 'xcodebuild -exportArchive -archivePath $PWD/build/JenkinsTest.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath $PWD/build'
             }
         }
 
