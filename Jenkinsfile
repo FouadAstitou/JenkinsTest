@@ -61,12 +61,12 @@ stages {
             }
         }
 
-        stage('export') {
-            steps {
-                // sh 'xcrun -sdk iphoneos PackageApplication -v JenkinsTest.app -o JenkinsTest.ipa --sign "iPhone Distribution: F Astitou"'
-                // sh 'xcodebuild -exportArchive -archivePath $PWD/build/JenkinsTest.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath $PWD/build'
-            }
-        }
+        // stage('export') {
+        //     steps {
+        //         // sh 'xcrun -sdk iphoneos PackageApplication -v JenkinsTest.app -o JenkinsTest.ipa --sign "iPhone Distribution: F Astitou"'
+        //         // sh 'xcodebuild -exportArchive -archivePath $PWD/build/JenkinsTest.xcarchive -exportOptionsPlist ExportOptions.plist -exportPath $PWD/build'
+        //     }
+        // }
 
         stage('upload') {
             steps {
